@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://map.gd" type="Script" id=1]
 [ext_resource path="res://block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://character.gd" type="Script" id=3]
 [ext_resource path="res://navdebug.gd" type="Script" id=4]
+[ext_resource path="res://default_font.tres" type="DynamicFont" id=5]
 
 [node name="world" type="Node2D"]
 
@@ -32,4 +33,15 @@ script = ExtResource( 4 )
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2( 248.711, 299.961 )
 current = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -218.68
+margin_top = 1253.12
+margin_right = -8.67953
+margin_bottom = 1342.12
+custom_fonts/font = ExtResource( 5 )
+text = "Click to enable Input
+R to Restart
+Arrows to Move
+PageUp,PageDown to Rotate"
 

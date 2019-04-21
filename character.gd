@@ -130,7 +130,7 @@ func get_path_to_tile(target):
 	return path
 
 func _draw():
-	draw_circle(Vector2.ZERO, CHARACTER_SIZE, Color.azure)
+	draw_circle(Vector2.ZERO, CHARACTER_SIZE, Color("B0002F"))
 #	for tile in highest_walkables:
 #		var tile_local_pos = to_local(tile.to_global(Vector2.ONE * Global.map.TILE_SIZE / 2))
 #		draw_circle(tile_local_pos, CHARACTER_SIZE * 0.8, Color.goldenrod)

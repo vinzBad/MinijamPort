@@ -189,12 +189,12 @@ func _draw():
 						local_pos.x + Global.map.TILE_SIZE * 0.1,
 						local_pos.y + Global.map.TILE_SIZE * 0.1),
 					Vector2(Global.map.TILE_SIZE, Global.map.TILE_SIZE ) * 0.80),
-					Color.red)
+					Color("71266E"))
 			elif (state == Global.TILE_WALKABLE):
 				draw_rect(Rect2(
 					Vector2(
 						local_pos.x + Global.map.TILE_SIZE * 0.1,
 						local_pos.y + Global.map.TILE_SIZE * 0.1),
 					Vector2(Global.map.TILE_SIZE, Global.map.TILE_SIZE ) * 0.80),
-					Color.green)
+					Color("FEEC39"))
 #	draw_circle(Vector2.ZERO, 5, Color.magenta)

@@ -1,5 +1,5 @@
 extends Node2D
-
+tool
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -18,6 +18,8 @@ onready var camera = get_node("/root/world/camera") as Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Engine.editor_hint:
+		return
 	Global.map = self
 	camera.position.x = MAP_WIDTH / 2 * TILE_SIZE + TILE_SIZE / 2
 	camera.position.y = MAP_HEIGHT  * TILE_SIZE - get_viewport_rect().size.y / 2
@@ -93,12 +95,17 @@ func indices_to_world_pos(x,y):
 				
 			
 
-
-func _input(event):
-	if event.is_action_released("left_click") and Input.is_action_just_released("left_click"):
-		var tile = tile_at_global_position( get_global_mouse_position())
-		if tile:
-			tile.inc_state()
-			
+func _draw():
+	if Engine.editor_hint:
+		for x in range(1, MAP_WIDTH):
+			draw_line(Vector2(x*TILE_SIZE, 0), Vector2(x*TILE_SIZE, TILE_SIZE * MAP_HEIGHT), Color.wheat, 2)
+		for y in range(1, MAP_HEIGHT):
+			draw_line(Vector2(0, y*TILE_SIZE), Vector2(TILE_SIZE * MAP_WIDTH, y*TILE_SIZE), Color.wheat, 2)
+#func _input(event):
+#	if event.is_action_released("left_click") and Input.is_action_just_released("left_click"):
+#		var tile = tile_at_global_position( get_global_mouse_position())
+#		if tile:
+#			tile.inc_state()
+#
 		
 			

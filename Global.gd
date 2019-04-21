@@ -45,6 +45,9 @@ var BLOCK_SCENE = preload("res://block.tscn")
 func _ready():
 	add_to_group("needs_block_stopped")
 	
+func _input(event):
+	if Input.is_action_just_pressed("reload_scene"):
+		get_tree().reload_current_scene()
 
 func block_stopped(block):
 	var block_width_px = BLOCK_WIDTH * map.TILE_SIZE

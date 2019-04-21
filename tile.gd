@@ -62,13 +62,13 @@ func _draw():
 	var rect_size = Vector2(Global.map.TILE_SIZE, Global.map.TILE_SIZE)
 	var state_text = "NONE"
 	if (state == Global.TILE_FREE):
-		draw_rect(Rect2(Vector2.ZERO, rect_size ), Color.blue);
+		draw_rect(Rect2(Vector2.ZERO, rect_size ), Color("229999"));
 		state_text = "FREE"
 	elif (state == Global.TILE_BLOCKED):
-		draw_rect(Rect2(Vector2.ZERO, rect_size ), Color.red);
+		draw_rect(Rect2(Vector2.ZERO, rect_size ), Color("71266E"));
 		state_text = "BLOCKED"
 	elif (state == Global.TILE_WALKABLE):
-		draw_rect(Rect2(Vector2.ZERO, rect_size ), Color.green);
+		draw_rect(Rect2(Vector2.ZERO, rect_size ), Color("FEEC39"));
 		state_text = "WALKABLE"
 	elif (state == Global.TILE_GOAL):
 		draw_rect(Rect2(Vector2.ZERO, rect_size ), Color.yellow);
