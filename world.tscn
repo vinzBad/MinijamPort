@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://map.gd" type="Script" id=1]
+[ext_resource path="res://block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://character.gd" type="Script" id=3]
+[ext_resource path="res://navdebug.gd" type="Script" id=4]
+
+[node name="world" type="Node2D"]
+
+[node name="map" type="Node2D" parent="."]
+script = ExtResource( 1 )
+MAP_HEIGHT = 30
+MAP_WIDTH = 12
+TILE_SIZE = 48
+
+[node name="blocks" type="Node2D" parent="."]
+
+[node name="block" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 320, 160 )
+
+[node name="character" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="move_timer" type="Timer" parent="character"]
+wait_time = 0.3
+one_shot = true
+
+[node name="navdebug" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2( 248.711, 299.961 )
+current = true
+
